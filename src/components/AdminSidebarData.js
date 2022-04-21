@@ -24,7 +24,7 @@ export const AdminSidebarData = [
   },
   {
     title: 'View Flight',
-    path: '/viewflights',
+    path: '/flight/allFlight',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },

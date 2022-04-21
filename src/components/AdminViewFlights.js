@@ -1,36 +1,73 @@
-import React,{useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
-import { toast } from "react-toastify";
-// import Cookies from 'js-cookie';
+import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import AdminFlightService from './AdminFlightService'
+import AdminNavbar from './AdminNavbar'
 
+const ListFlightComponent = () => {
 
+    const [flights, setFlights] = useState([])
 
-export default function UserDashboard(){
-    let navigate=useNavigate();
-    useEffect(()=>{
-        const isAuthenticated = localStorage.getItem("isUser");
+    useEffect(() => {
 
-        // console.log("User authenticated:"+isAuthenticated);
-        // if(!isAuthenticated)
-        // {   
-        //     navigate("/userLogin");
-        //     toast.error('You are not logged in yet', {
-        //         position: "top-right",
-        //         autoClose: 5000,
-        //         hideProgressBar: false,
-        //         closeOnClick: true,
-        //         pauseOnHover: true,
-        //         draggable: true,
-        //         progress: undefined,
-        //         });
-        // }
-    },[])
-    return(
-        <div style={{padding:'2%'}}>
-        <div>
-            Welcome to view flights
-        </div>
-        {/* <FlightApp/> */}
-        </div>
+        getAllFlights();
+    }, [])
+
+    const getAllFlights = () => {
+        AdminFlightService.getAllFlights().then((response) => {
+            setFlights(response.data)
+            console.log(response.data);
+        }).catch(error =>{
+            console.log(error);
+        })
+    }
+
+    // const deleteFlight = (flightNo) => {
+    //    FlightService.deleteFlight(flightNo).then((response) =>{
+    //     getAllFlights();
+
+    //    }).catch(error =>{
+    //        console.log(error);
+    //    })
+        
+    // }
+
+    return (
+        <>
+        <AdminNavbar />
+        <div className = "container">
+            
+           <h1> <div class="p-3 mb-2 bg-light text-dark text-center">FLIGHT LIST</div></h1>
+            
+            <Link to = "/add-flight" className = "btn btn-secondary mb-2" > Add Flight </Link>
+            <table className="table table-success table-striped">
+                <thead >
+                    <th> Flight No </th>
+                    <th> CarrierName </th>
+                    <th> Flight Model </th>
+                    <th> Seat Capacity </th>
+                    <th> Actions </th>
+                </thead>
+                <tbody>
+                    {
+                        flights.map(
+                            flight =>
+                            <tr key = {flight.flightNo}> 
+                                <td> {flight.flightNo} </td>
+                                <td> {flight.carrierName} </td>
+                                <td>{flight.flightModel}</td>
+                                <td>{flight.seatCapacity}</td>
+                                <td>
+                                    <Link className="btn btn-secondary" to={`/edit-flight/${flight.flightNo}`} >Update</Link>
+                                    {/* <button className = "btn btn-danger" onClick = {() => deleteFlight(flight.flightNo)}
+                                    style = {{marginLeft:"10px"}}> Delete</button> */}
+                                </td>
+                            </tr>
+                        )
+                    }
+                </tbody>
+            </table>
+        </div></>
     )
 }
+
+export default ListFlightComponent

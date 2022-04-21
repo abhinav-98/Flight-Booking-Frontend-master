@@ -21,22 +21,22 @@ function App() {
       <>
         <ToastContainer position="top-left"/>
     <BrowserRouter>
-      <Header />
+      
       <Routes>
         {/* LOGIN AND SIGNUP OPERATIONS */}
-        <Route path="/" element={<><Showcase /><Destinations /></>} />
-        <Route path="/user/userLogin" element={<UserLogin />}/>
+        <Route path="/" element={<><Header /><Showcase /><Destinations /><Footer /></>} />
+        <Route path="/user/userLogin" element={<><Header /><UserLogin /><Footer /></>}/>
         <Route path="/adminLogin" element={<AdminLogin />}/>
-        <Route path="/user/createUser" element={<SignUp />}/>
+        <Route path="/user/createUser" element={<><Header /><SignUp /><Footer /></>}/>
         <Route path="*" element={<Error />}/>
         {/* ADMIN OPERATIONS */}
         <Route path="/AdminDashboard" element={<AdminDashboard />}/>
         <Route path="/UserDashboard" element={<UserDashboard/>}/>
         <Route path="/viewflights" element={<AdminViewFlights/>}/>
         <Route path="/searchFlight" element={<UserSearchFlight/>}/>
+        <Route path = "/flight/allFlight" element = {<AdminViewFlights/>}/>
         {/* USER/PASSENGER OPEARTIONS */}
       </Routes>
-      <Footer />
     </BrowserRouter>
     </>
   );
