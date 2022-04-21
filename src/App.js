@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Showcase from './components/Showcase'
 import Destinations from './components/Destinations'
 import Footer from './components/Footer'
-import UserLogin from './components/UserLogin'
+import UserLogin from './components/Login'
 import SignUp from './components/SignUp'
 import Error from './components/Error'
 import {ToastContainer, toast} from "react-toastify";
@@ -12,6 +12,8 @@ import AdminLogin from './components/AdminLogin'
 import 'react-toastify/dist/ReactToastify.css';
 import AdminDashboard from './components/AdminDashboard';
 import UserDashboard from './components/UserDashboard';
+import AdminViewFlights from './components/AdminViewFlights';
+import UserSearchFlight from './components/UserSearchFlight'
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
         {/* ADMIN OPERATIONS */}
         <Route path="/AdminDashboard" element={<AdminDashboard />}/>
         <Route path="/UserDashboard" element={<UserDashboard/>}/>
+        <Route path="/viewflights" element={<AdminViewFlights/>}/>
+        <Route path="/searchFlight" element={<UserSearchFlight/>}/>
         {/* USER/PASSENGER OPEARTIONS */}
       </Routes>
       <Footer />

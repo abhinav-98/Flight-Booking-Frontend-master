@@ -12,11 +12,11 @@ const Header = () => {
 
       <nav className='navbar'>
         <ul>
-        <Link className='links' to="/adminLogin">
+        {/* <Link className='links' to="/adminLogin">
             Admin
-          </Link>
+          </Link> */}
           <Link className='links' to="/user/userLogin">
-            User
+            Login
           </Link>
           <Link className='links' to="/user/createUser">
             Sign Up
