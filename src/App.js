@@ -10,13 +10,14 @@ import Error from './components/Error'
 import {ToastContainer, toast} from "react-toastify";
 import AdminLogin from './components/AdminLogin'
 import 'react-toastify/dist/ReactToastify.css';
+import AdminDashboard from './components/AdminDashboard';
+import UserDashboard from './components/UserDashboard';
 
 
 function App() {
   return (
       <>
         <ToastContainer position="top-left"/>
-      
     <BrowserRouter>
       <Header />
       <Routes>
@@ -27,17 +28,14 @@ function App() {
         <Route path="/user/createUser" element={<SignUp />}/>
         <Route path="*" element={<Error />}/>
         {/* ADMIN OPERATIONS */}
-        
-
-
-
+        <Route path="/AdminDashboard" element={<AdminDashboard />}/>
+        <Route path="/UserDashboard" element={<UserDashboard/>}/>
         {/* USER/PASSENGER OPEARTIONS */}
       </Routes>
       <Footer />
     </BrowserRouter>
     </>
-    
   );
 }
-
+ 
 export default App
