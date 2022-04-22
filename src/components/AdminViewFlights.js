@@ -21,15 +21,15 @@ const ListFlightComponent = () => {
         })
     }
 
-    // const deleteFlight = (flightNo) => {
-    //    FlightService.deleteFlight(flightNo).then((response) =>{
-    //     getAllFlights();
+    const deleteFlight = (flightNo) => {
+       AdminFlightService.deleteFlight(flightNo).then((response) =>{
+        getAllFlights();
 
-    //    }).catch(error =>{
-    //        console.log(error);
-    //    })
+       }).catch(error =>{
+           console.log(error);
+       })
         
-    // }
+    }
 
     return (
         <>
@@ -58,8 +58,8 @@ const ListFlightComponent = () => {
                                 <td>{flight.seatCapacity}</td>
                                 <td>
                                     <Link className="btn btn-secondary" to={`/edit-flight/${flight.flightNo}`} >Update</Link>
-                                    {/* <button className = "btn btn-danger" onClick = {() => deleteFlight(flight.flightNo)}
-                                    style = {{marginLeft:"10px"}}> Delete</button> */}
+                                    <button className = "btn btn-danger" onClick = {() => deleteFlight(flight.flightNo)}
+                                    style = {{marginLeft:"10px"}}> Delete</button>
                                 </td>
                             </tr>
                         )

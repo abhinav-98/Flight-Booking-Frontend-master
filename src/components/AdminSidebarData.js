@@ -5,8 +5,8 @@ import * as IoIcons from 'react-icons/io';
 
 export const AdminSidebarData = [
   {
-    title: 'Welcome',
-    path: '/welcome',
+    title: 'Home',
+    path: '/',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
@@ -23,35 +23,35 @@ export const AdminSidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'View Flight',
+    title: 'Flights',
     path: '/flight/allFlight',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
+  // {
+  //   title: 'Add Flight',
+  //   path: '/addflight',
+  //   icon: <FaIcons.FaEnvelopeOpenText />,
+  //   cName: 'nav-text'
+  // },
   {
-    title: 'Add Flight',
-    path: '/addflight',
-    icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'View Bookings',
+    title: 'Bookings',
     path: '/viewbookings',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   },
   {
-    title: 'View Airports',
+    title: 'Airports',
     path: '/viewairports',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   },
-  {
-    title: 'Add Airport',
-    path: '/addairport',
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Add Airport',
+  //   path: '/addairport',
+  //   icon: <IoIcons.IoMdHelpCircle />,
+  //   cName: 'nav-text'
+  // },
   // {
   //   title: 'View Flight Schedule',
   //   path: '/support',
