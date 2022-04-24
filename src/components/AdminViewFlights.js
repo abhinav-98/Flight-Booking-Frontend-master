@@ -38,7 +38,7 @@ const ListFlightComponent = () => {
             
            <h1> <div class="p-3 mb-2 bg-light text-dark text-center">FLIGHT LIST</div></h1>
             
-            <Link to = "/add-flight" className = "btn btn-secondary mb-2" > Add Flight </Link>
+            {/* <Link to = "/add-flight" className = "btn btn-secondary mb-2" > Add Flight </Link> */}
             <table className="table table-success table-striped">
                 <thead >
                     <th> Flight No </th>
@@ -57,7 +57,7 @@ const ListFlightComponent = () => {
                                 <td>{flight.flightModel}</td>
                                 <td>{flight.seatCapacity}</td>
                                 <td>
-                                    <Link className="btn btn-secondary" to={`/edit-flight/${flight.flightNo}`} >Update</Link>
+                                    {/* <Link className="btn btn-secondary" to={`/edit-flight/${flight.flightNo}`} >Update</Link> */}
                                     <button className = "btn btn-danger" onClick = {() => deleteFlight(flight.flightNo)}
                                     style = {{marginLeft:"10px"}}> Delete</button>
                                 </td>

@@ -14,6 +14,8 @@ import AdminDashboard from './components/AdminDashboard';
 import UserDashboard from './components/UserDashboard';
 import AdminViewFlights from './components/AdminViewFlights';
 import UserSearchFlight from './components/UserSearchFlight'
+import FlightApp from './components/FlightApp'
+import Flights from './components/Flights';
 
 
 function App() {
@@ -33,8 +35,10 @@ function App() {
         <Route path="/AdminDashboard" element={<AdminDashboard />}/>
         <Route path="/UserDashboard" element={<UserDashboard/>}/>
         <Route path="/viewflights" element={<AdminViewFlights/>}/>
-        <Route path="/searchFlight" element={<UserSearchFlight/>}/>
+        <Route path="/searchFlight" element={<FlightApp/>}/>
+        {/* <Route path = "/flight/allFlight" element = {<AdminViewFlights/>}/> */}
         <Route path = "/flight/allFlight" element = {<AdminViewFlights/>}/>
+        <Route path="/searchFlight/flights" element={<Flights/>}/>
         {/* USER/PASSENGER OPEARTIONS */}
       </Routes>
     </BrowserRouter>

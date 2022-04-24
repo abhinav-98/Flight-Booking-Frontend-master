@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import './UserSearchFlight.css';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { UserFlightResults } from './UserFlightResults';
+import './search-form.css';
 
 const airports = [
   'Pune (PNQ)',
@@ -154,4 +155,4 @@ const mapDispatchToProps = {
   UserFlightResults
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
+export default SearchForm;
