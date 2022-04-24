@@ -16,6 +16,9 @@ import AdminViewFlights from './components/AdminViewFlights';
 import UserSearchFlight from './components/UserSearchFlight'
 import FlightApp from './components/FlightApp'
 import Flights from './components/Flights';
+import AdminAddAirport from './components/AdminAddAirport';
+import AdminViewAirport from './components/AdminViewAirport';
+
 
 
 function App() {
@@ -40,6 +43,9 @@ function App() {
         <Route path = "/flight/allFlight" element = {<AdminViewFlights/>}/>
         <Route path="/searchFlight/flights" element={<Flights/>}/>
         {/* USER/PASSENGER OPEARTIONS */}
+        <Route path = "/airports" element = {<AdminViewAirport/>}></Route>
+        <Route path = "/add-airport" element = {<AdminAddAirport/>}></Route>
+        <Route path = "/edit-airport/:airportNo" element = {<AdminAddAirport/>}></Route>
       </Routes>
     </BrowserRouter>
     </>

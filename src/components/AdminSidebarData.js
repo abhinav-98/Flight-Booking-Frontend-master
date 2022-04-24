@@ -42,7 +42,7 @@ export const AdminSidebarData = [
   },
   {
     title: 'Airports',
-    path: '/viewairports',
+    path: '/airports',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   },
